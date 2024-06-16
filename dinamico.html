@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        h1{
+            background-color: royalblue;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        button{
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: royalblue;
+            color: white;
+        }
+        .lista{
+            display: grid;
+            grid-template-columns: 5fr 1fr;
+            width: 80%;
+            background-color: rgb(143, 60, 233);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .botones{
+            display: flex;
+            justify-content: center;
+           gap: 10px;
+
+        }
+        .principal{
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-bottom: 10px;
+        }
+        .leyenda{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+    <script>
+        var listas;
+        var a;
+        var contador=4;
+        const play = ()=>{
+            const boton= document.querySelector(".principal");
+            listas=document.querySelector("section");
+            console.log(boton);
+            boton.addEventListener('click',ready,false);
+        }
+        function ready(){
+            a=prompt('nueva tareas');
+            a=contador+'. '+a;
+            listas.innerHTML=listas.innerHTML+'<div class="lista"> <p>'+a+'</p> <div class="botones"><button>+</button> <button>-</button></div> </div>';
+            contador++;
+        }
+        window.addEventListener('load',play,false);
+    </script>
+</head>
+<body>
+    <h1>Agenda de actividades</h1>
+    <button class="principal">Agregar</button>
+    <div class="leyenda">
+        <span>Completado 🔴</span><span>Por hacer 🟣</span>
+    </div>
+    <section>
+        <div class="lista"> <p>1. Limpiar tu cuarto</p> <div class="botones"><button>+</button> <button>-</button></div> </div>
+        <div class="lista"> <p>2. Limpiar tu cuarto</p> <div class="botones"><button>+</button> <button>-</button></div> </div>
+        <div class="lista"> <p>3. Limpiar tu cuarto</p> <div class="botones"><button>+</button> <button>-</button></div> </div>
+    </section>
+
+</body>
+</html>
